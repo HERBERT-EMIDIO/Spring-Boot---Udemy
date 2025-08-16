@@ -1,5 +1,6 @@
 package com.udemy.spring;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,28 +10,29 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Application implements CommandLineRunner {
 
-	public static void main(String[] args) {
+@Autowired //11;55 aula7
+UsuarioService serv;
+
+public static void main(String[] args) {
 	SpringApplication.run(Application.class, args);
+}
+
+/*
+UsuarioService serv = new UsuarioService(new UsuarioRepository());
+UsuarioService serv2 = new UsuarioService(new UsuarioRepositoryApi());
+UsuarioService serv3 = new UsuarioService(new UsuarioRepository());
 
 
-	/*
-	UsuarioService serv = new UsuarioService(new UsuarioRepository());
-	UsuarioService serv2 = new UsuarioService(new UsuarioRepositoryApi());
-	UsuarioService serv3 = new UsuarioService(new UsuarioRepository());
-	
-	
-	// new UsuarioRepository()); //1:53 aula 7
-	// new UsuarioRepositoryApi());
-	serv.obterUsuario();
-	serv2.obterUsuario();
-	serv3.obterUsuario();
-	 */
-
-	}
+// new UsuarioRepository()); //1:53 aula 7
+// new UsuarioRepositoryApi());
+// serv.obterUsuario();
+// serv2.obterUsuario();
+// serv3.obterUsuario();
+ */
 
 	@Override
 	public void run(String... args) throws Exception { // 9:32 aula 7
-	
+		serv.obterUsuario();
 	}
 
 }

@@ -1,5 +1,9 @@
+
 package com.udemy.spring;
 
+import org.springframework.stereotype.Component;
+
+@Component("repApi")
 public class UsuarioRepositoryApi implements InterfaceUsuarioRepository {
 
     @Override
